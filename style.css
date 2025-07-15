@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Fredoka:wght@300..700&family=Indie+Flower&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Savate:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+  /* FONTS */
+  --ff-poppins: "Poppins", sans-serif;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* COLORS */
+  --black: rgb(22, 21, 21);
+  --white: #f6f0f5;
+  --maroon: #460815;
+  --pink: #da6fa3;
+  --light-pink: #facde3;
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-normal);
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.5;
+}
+
+/* Navigation */
+nav {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background-color: var(--white);
+  box-shadow: 3px 3px 5px var(--shadow);
+}
+
+nav .navbar-menu .my-porto {
+  font-weight: var(--fw-semibold);
+  font-size: 1.5rem;
+}
+
+nav .navbar-menu .my-porto span {
+  color: var(--pink);
+}
+
+nav .navbar-menu ul {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav .navbar-menu li {
+  height: 50px;
+}
+
+nav .navbar-menu a {
+  height: 100%;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  color: var(--black);
+}
+
+nav .navbar-menu a:hover {
+  background-color: var(--light-pink);
+  transition: 0.8s;
+}
+
+nav .navbar-menu li:first-child {
+  margin-right: auto;
+}
+
+nav .navbar-menu .sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(249, 242, 246, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+nav .navbar-menu .sidebar li,
+a {
+  width: 100%;
+}
+
+.finisher-header {
+  position: absolute;
+  z-index: -1;
+}
+
+.btn a {
+  cursor: pointer;
+}
+
+/* Sections */
+section {
+  background-color: var(--light-pink);
+  margin: 1.5rem;
+}
+
+.home.section {
+  background: none;
+  margin-block: 5rem;
+}
+
+.home.section .home.container {
+  font-size: 1.8rem;
+}
+
+.home.section .home.container .btn {
+  background-color: rgb(166, 41, 101);
+  border-radius: 8px;
+  font-size: 1rem;
+  padding-inline: 10px;
+  color: var(--white);
+}
+
+.home.section .home.container .btn:hover {
+  background-color: #da6fa3;
+}
+
+.about.section {
+  margin-top: 10rem;
+}
+/* .home.section {
+}
+
+.about.section {
+}
+
+.project.section {
+}
+
+.contact.section {
+} */
+
+.project-list,
+.cookie-logo,
+.cookie-product,
+.soda-logo,
+.soda-poster,
+.film-poster {
+  padding: 2rem;
+  width: 100%;
+  height: auto;
+}
+
+.spa-banner {
+  padding: 4rem;
+  width: 100%;
+  height: auto;
+}
+
+footer .account {
+  display: flex;
+  flex-direction: row;
+}
+
+footer .account img {
+  width: 100px;
+  height: 100px;
+  object-fit: scale-down;
+}
