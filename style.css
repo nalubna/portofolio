@@ -76,6 +76,13 @@ nav .navbar-menu a {
   color: var(--black);
 }
 
+nav .navbar-menu .fa-bars {
+  padding: 17px 30px;
+  display: flex;
+  align-items: center;
+  color: var(--black);
+}
+
 nav .navbar-menu a:hover {
   background-color: var(--light-pink);
   transition: 0.8s;
@@ -90,12 +97,12 @@ nav .navbar-menu .sidebar {
   top: 0;
   right: 0;
   height: 100vh;
-  width: 250px;
+  width: 200px;
   z-index: 999;
-  background-color: rgba(249, 242, 246, 0.5);
   backdrop-filter: blur(10px);
+  background-color: rgba(249, 242, 246, 0.8);
   box-shadow: -10px 0 10px var(--shadow);
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -104,6 +111,30 @@ nav .navbar-menu .sidebar {
 nav .navbar-menu .sidebar li,
 a {
   width: 100%;
+}
+
+nav .navbar-menu .sidebar .fa-xmark {
+  margin: 1.8rem;
+  font-size: large;
+  color: var(--black);
+}
+
+@media(min-width: 800px) {
+  nav .navbar-menu .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .hideOnMobile {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar {
+    width: 100%;
+  }
 }
 
 .finisher-header {
@@ -117,17 +148,21 @@ a {
 
 /* Sections */
 section {
-  background-color: var(--light-pink);
+  background-color: var(--white);
   margin: 1.5rem;
+  box-shadow: 0 5px 10px var(--shadow);
 }
 
 .home.section {
   background: none;
+  box-shadow: none;
   margin-block: 5rem;
 }
 
 .home.section .home.container {
   font-size: 1.8rem;
+  padding: 2rem;
+  margin-left: 3rem;
 }
 
 .home.section .home.container .btn {
