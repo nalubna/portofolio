@@ -35,7 +35,7 @@
             <li class="hideOnMobile"><a href="#about">About Me</a></li>
             <li class="hideOnMobile"><a href="#projects">Projects</a></li>
             <li class="hideOnMobile"><a href="#contact">Contact</a></li>
-            <li onclick="showSidebar()">
+            <li class="menu-button" onclick="showSidebar()">
               <div><i class="fa-solid fa-bars"></i></div>
             </li>
           </ul>
@@ -45,7 +45,7 @@
 
     <div
       class="header finisher-header"
-      style="width: 100%; height: 350px"
+      style="width: 100%; min-height: 100vh"
     ></div>
 
     <!-- Home Section -->
@@ -53,7 +53,7 @@
       <div class="home container">
         <div class="intro">
           <h1>Portofolio</h1>
-          <h3>Graphic Designer</h3>
+          <h3>Front-end Web Developer & Graphic Designer</h3>
         </div>
         <a
           href="./assets/pdf/CV Terbaru (Admin & Desain Grafis).pdf"
@@ -65,41 +65,61 @@
     </section>
 
     <!-- About Me Section -->
+    <h1 class="heading about" id="about">About Me</h1>
     <section class="about section">
-      <div class="about container" id="about">
-        <h1 class="heading">About Me</h1>
-        <img class="my-photo" src="" alt="my photo" />
+      <div class="about container">
         <div class="about-me">
+          <div class="my-photo">
+            <img
+              width="100"
+              src="./assets/images/my-photo.png"
+              alt="my photo"
+            />
+          </div>
           <div class="description">
             <h3>Hello!</h3>
             <h4>I'm Hanna Nashita Lubna</h4>
             <p>
-              Welcome to my portofolio! I'm a dedicated graphic designer. I
-              strive to create visually appealing and balance design that
-              resonate with my target audience.
+              A dedicated front-end web developer and graphic designer. I strive
+              to create visually appealing and balance design that resonate with
+              my target audience.
             </p>
             <p>Explore my projects to learn more about what I do.</p>
-            <a href="#projects">Explore</a>
+            <a href="#projects">Learn more</a>
           </div>
         </div>
 
         <div class="skill">
           <h3>Skill & Tools</h3>
           <div class="skill-list">
-            <li>
-              <ul>
-                Logo design
-              </ul>
-              <ul>
-                Poster
-              </ul>
-              <ul>
-                Banner
-              </ul>
-              <ul>
-                Magazine cover
-              </ul>
-            </li>
+            <div class="developer">
+              <h3>Front-end Web Development</h3>
+              <li>
+                <ul>
+                  HTML, CSS, and JavaScript fundamental
+                </ul>
+                <ul>
+                  Responsive website design
+                </ul>
+                <ul>
+                  Debugging
+                </ul>
+              </li>
+            </div>
+            <div class="design">
+              <h3>Graphic Design</h3>
+              <li>
+                <ul>
+                  Logo design
+                </ul>
+                <ul>
+                  Poster
+                </ul>
+                <ul>
+                  Banner
+                </ul>
+              </li>
+            </div>
             <div class="illustrator wrap">
               <img
                 width="100"
@@ -121,7 +141,7 @@
             <div class="procreate wrap">
               <img
                 width="100"
-                src="./assets/images/"
+                src="./assets/images/Procreate-3-Icon.png"
                 alt="procreate logo"
                 class="logo"
               />
@@ -133,9 +153,9 @@
     </section>
 
     <!-- Projects Section -->
+    <h1 class="heading" id="projects">My Projects</h1>
     <section class="project section">
-      <div class="project container" id="projects">
-        <h1 class="heading">My Projects</h1>
+      <div class="project container">
         <div class="project-list">
           <div class="logo">
             <img
@@ -192,9 +212,9 @@
     </section>
 
     <!-- Contact Section -->
+    <h1 class="heading" id="contact">Contact Me</h1>
     <section class="contact section">
-      <div class="contact container" id="contact">
-        <h1 class="heading">Contact Me</h1>
+      <div class="contact container">
         <div class="contact-wrapper">
           <form class="myForm" id="myForm">
             <label for="name">Name:</label><br />
@@ -268,7 +288,7 @@
           },
         },
         colors: {
-          background: "#ffffff",
+          background: "#fff",
           particles: ["#fb7fd5", "#87ddfe", "#8481ff", "#efd05b", "#ffc1df"],
         },
         blending: "overlay",
