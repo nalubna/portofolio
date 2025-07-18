@@ -8,52 +8,67 @@
   --fw-normal: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
+  --fw-bold: 800;
 
   /* COLORS */
+  --white: #fff;
   --black: #161515;
-  --white: #fff2f9;
   --maroon: #460815;
   --pink: #fa9cc9;
-  --light-pink: #facde3;
+  --light-pink-1: #fff2f9;
+  --light-pink-2: #facde3;
   --shadow: rgba(0, 0, 0, 0.2);
+  --semi-transparent: rgba(249, 242, 246, 0.8);
 }
 
-/**** REPEAT */
+/**** BASE */
 
 *,
 html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   outline: none;
   border: none;
+  box-sizing: border-box;
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
 }
 
 body {
+  overflow-x: hidden;
   min-height: 100vh;
   font-family: var(--ff-poppins);
   font-weight: var(--fw-normal);
   color: var(--black);
-  overflow-x: hidden;
-  background-color: white;
+  background: url(./assets/images/pink-geometric.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .btn {
   cursor: pointer;
+  font-size: 1.5rem;
+  border: 3px solid var(--black);
+  border-radius: 8px;
+  background-color: var(--pink);
+  color: var(--black);
+  padding: 0 10px;
+}
+
+.btn:hover {
+  background-color: var(--light-pink-2);
 }
 
 /**** NAVIGATION */
 
 nav {
-  z-index: 1;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
   position: fixed;
-  background-color: var(--white);
+  background-color: var(--light-pink-1);
   box-shadow: 3px 3px 5px var(--shadow);
 }
 
@@ -70,7 +85,7 @@ nav .navbar-menu .my-porto span {
 
 nav .navbar-menu ul {
   width: 100%;
-  height: 3.5rem;
+  height: 4rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -89,19 +104,12 @@ nav .navbar-menu a {
 }
 
 nav .navbar-menu .fa-bars {
-  padding: 17px 30px;
-  display: flex;
-  align-items: center;
-  color: var(--black);
-}
-
-nav .navbar-menu .menu-button {
   display: none;
+  padding: 17px 30px;
 }
 
 nav .navbar-menu a:hover {
-  color: var(--black);
-  background-color: var(--light-pink);
+  background-color: var(--light-pink-2);
 }
 
 nav .navbar-menu li:first-child {
@@ -109,30 +117,27 @@ nav .navbar-menu li:first-child {
 }
 
 nav .navbar-menu .sidebar {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
   width: 200px;
-  z-index: 999;
-  backdrop-filter: blur(10px);
-  background-color: rgba(249, 242, 246, 0.8);
+  height: 100vh;
+  z-index: 20;
+  background-color: var(--semi-transparent);
   box-shadow: -10px 0 10px var(--shadow);
-  display: none;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
-nav .navbar-menu .sidebar li,
-a {
+nav .navbar-menu .sidebar li {
   width: 100%;
 }
 
 nav .navbar-menu .sidebar .fa-xmark {
   margin: 1.8rem;
   font-size: large;
-  color: var(--black);
 }
 
 @media (max-width: 800px) {
@@ -140,7 +145,7 @@ nav .navbar-menu .sidebar .fa-xmark {
     display: none;
   }
 
-  nav .navbar-menu .menu-button {
+  nav .navbar-menu .fa-bars {
     display: block;
   }
 }
@@ -151,12 +156,7 @@ nav .navbar-menu .sidebar .fa-xmark {
   }
 }
 
-/**** HEADS */
-
-.finisher-header {
-  position: absolute;
-  z-index: -1;
-}
+/**** HEADING */
 
 .heading {
   background-color: var(--pink);
@@ -164,98 +164,119 @@ nav .navbar-menu .sidebar .fa-xmark {
   text-align: center;
   font-weight: var(--fw-semibold);
   font-size: 3rem;
-  margin-inline: 12rem;
-}
-
-.heading.about {
-  position: relative;
-  top: 10px;
+  margin-bottom: 1rem;
 }
 
 /**** SECTIONS */
 
-section {
-  background-color: var(--white);
-  padding: 2rem;
-  border: 2px solid var(--black);
-  margin: 4rem 12rem;
+/* Grouping */
+
+.about,
+.project,
+.contact {
+  padding: 7rem;
+}
+
+.about-content,
+.skill,
+.project-content,
+.contact-content {
+  background-color: var(--light-pink-1);
+  border: 3px solid var(--black);
   border-radius: 18px;
 }
 
 /* Home */
 
-.home.section {
-  border: none;
-  background: none;
-  box-shadow: none;
-  margin-inline: 0;
-  position: relative;
-  left: 15rem;
-  top: 10rem;
-  margin-bottom: 34.2rem;
+.home {
+  padding: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(./assets/images/pink-bg.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
-.home.section .home.container .intro h1 {
-  font-size: 6rem;
+.home-content {
+  margin-top: 10rem;
+  margin-left: 15rem;
+}
+
+.home-content .intro h1 {
+  font-size: 7rem;
   letter-spacing: 0.5rem;
   color: transparent;
   -webkit-text-stroke: 3px var(--black);
 }
 
-.home.section .home.container .intro h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.home.section .home.container .btn {
-  font-size: 1.2rem;
-  border: 3px solid var(--black);
-  background-color: var(--pink);
-  color: var(--black);
-  border-radius: 8px;
-  padding-inline: 10px;
-}
-
-.home.section .home.container .btn:hover {
-  background-color: var(--light-pink);
+.home-content .intro h3 {
+  font-size: 4rem;
+  margin-bottom: 0.8rem;
 }
 
 /* About */
 
-.about.section {
-  margin-top: 1.6rem;
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 1rem;
+  font-size: 1.5rem;
 }
 
-.about.section .about.container {
+.about-content .my-photo {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  height: 100%;
+}
+
+.about-content .description h2 {
+  font-size: 4rem;
+  font-family: var(--ff-caveat);
+  font-weight: var(--fw-bold);
+}
+
+.about-content .description h3 {
+  font-size: 2.2rem;
+}
+
+.about-content .description p {
+  line-height: 1.5;
+}
+
+.about-content .description .p2 {
+  margin-bottom: 1rem;
+}
+
+.skill {
+  padding: 1rem;
+}
+
+.skill h3 {
+  padding-inline-start: 1rem;
+  font-size: 2.5rem;
+}
+
+.skill img {
 }
 
 /* Projects */
 
-.project.section {
-  margin-top: 1rem;
+.project-content {
+  display: flex;
+  align-items: center;
 }
 
 /* Contact */
 
-.contact.section {
-  margin-top: 1rem;
+.contact {
 }
 
-.project-list,
-.cookie-logo,
-.cookie-product,
-.soda-logo,
-.soda-poster,
-.film-poster {
-  padding: 2rem;
-  width: 100%;
-  height: auto;
-}
+/* Project */
 
-.spa-banner {
-  padding: 4rem;
-  width: 100%;
-  height: auto;
+.project-content {
 }
 
 /**** FOOTER */
